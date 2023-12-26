@@ -1,0 +1,16 @@
+delete ocorrencia;
+delete br;
+delete causa_acidente;
+delete classificacao_acidente;
+delete clima;
+delete delegacia;
+delete estados;
+delete localidades;
+delete sede;
+delete sentido_via;
+delete tipo_acidente;
+delete tipo_pista;
+delete tracado_via;
+delete UNIDADE_OPERACIONAL;
+delete uso_solo;
+DROP TABLE PLANILHA_OCORRENCIAS;

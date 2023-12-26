@@ -1,0 +1,126 @@
+
+Conectado a: Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+Exportação executada no conjunto de caracteres de WE8MSWIN1252  e no conjunto de caracteres de AL16UTF16 NCHAR
+o servidor usa AL32UTF8 conjunto de caracteres (conversão de conjunto de caracteres possível)
+
+Sobre exportar usuários especificados ...
+. exportando objetos e ações procedurais anteriores ao esquema
+. exportando os nomes da biblioteca de função externa para usuário JOAO 
+. exportando sinônimos do tipo PÚBLICO
+. exportando sinônimos do tipo privado
+. exportando definições de tipos de objeto para usuário JOAO 
+Sobre exportar objetos de JOAO ...
+. exportando links de banco de dados
+. exportando números de sequência
+. exportando definições de cluster
+. sobre exportar tabelas de JOAO via Caminho Convencional ...
+. . exportando tabela                             BR        113 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                 CAUSA_ACIDENTE         71 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela         CLASSIFICACAO_ACIDENTE          3 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                          CLIMA         10 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                      DELEGACIA        166 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                        ESTADOS         27 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                            HBR          0 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                HCAUSA_ACIDENTE         24 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela        HCLASSIFICACAO_ACIDENTE          0 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                         HCLIMA          0 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                     HDELEGACIA          0 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                       HESTADOS          0 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                   HLOCALIDADES      37468 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                    HOCORRENCIA      41454 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                          HSEDE          0 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                   HSENTIDO_VIA          0 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                 HTIPO_ACIDENTE         46 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                    HTIPO_PISTA          0 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                   HTRACADO_VIA          0 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela           HUNIDADE_OPERACIONAL        792 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                      HUSO_SOLO          0 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                    LOCALIDADES      12866 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                     OCORRENCIA      14811 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela           PLANILHA_OCORRENCIAS      14811 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                           SEDE         43 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                    SENTIDO_VIA          2 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                  TIPO_ACIDENTE         50 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                     TIPO_PISTA          3 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                    TRACADO_VIA         10 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela            UNIDADE_OPERACIONAL        387 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. . exportando tabela                       USO_SOLO          2 linhas exportadas
+EXP-00091: Exportando estatísticas questionáveis.
+EXP-00091: Exportando estatísticas questionáveis.
+. exportando sinônimos
+. exportando views
+. exportando procedimentos armazenados
+. exportando operadores
+. exportando restrições referenciais de integridade
+. exportando gatilhos
+. exportando tipos de índices
+. exportando índices funcionais, extensíveis e de bitmap
+. exportando ações contabilizáveis
+. exportando views materializadas
+. exportando logs de snapshot
+. exportando filas de serviço
+. exportando filhos e grupos de atualização
+. exportando dimensões
+. exportando objetos e ações procedurais posteriores ao esquema
+. exportando estatística
+Exportação encerrada com êxito, sem advertências.

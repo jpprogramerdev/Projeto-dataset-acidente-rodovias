@@ -1,0 +1,4 @@
+
+exp file=c:/tmp/BKP_APP.dmp log=c:/tmp/EXP_APP.log owner='APP' statistic='none'
+ 
+imp file=c:/tmp/BKP_APP.dmp log=c:/tmp/IMP_APP.log fromuser='APP' touser='APP'

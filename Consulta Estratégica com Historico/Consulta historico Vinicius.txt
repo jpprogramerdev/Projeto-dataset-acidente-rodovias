@@ -1,0 +1,84 @@
+SELECT
+    CASE
+        WHEN TO_CHAR(O1.OCR_HORARIO, 'HH24:MI:SS') BETWEEN '00:00:00' AND '05:59:59' THEN 'Madrugada'
+        WHEN TO_CHAR(O1.OCR_HORARIO, 'HH24:MI:SS') BETWEEN '06:00:00' AND '11:59:59' THEN 'Manhã'
+        WHEN TO_CHAR(O1.OCR_HORARIO, 'HH24:MI:SS') BETWEEN '12:00:00' AND '17:59:59' THEN 'Tarde'
+        ELSE 'Noite'
+    END AS FASEDODIA,
+    SUM(CASE
+            WHEN TO_CHAR(O1.OCR_DIA, 'DD-MM-YYYY') BETWEEN '01-01-2018' AND '31-12-2018' THEN OCR_FERIDOS_LEVES
+            ELSE 0
+        END) AS FERIDOSLEVES_2018,
+    SUM(CASE
+            WHEN TO_CHAR(O1.OCR_DIA, 'DD-MM-YYYY') BETWEEN '01-01-2021' AND '31-12-2021' THEN OCR_FERIDOS_LEVES
+            ELSE 0
+        END) AS FERIDOSLEVES_2021,
+    SUM(CASE
+            WHEN TO_CHAR(O1.OCR_DIA, 'DD-MM-YYYY') BETWEEN '01-01-2022' AND '31-12-2022' THEN OCR_FERIDOS_LEVES
+            ELSE 0
+        END) AS FERIDOSLEVES_2022,
+    SUM(CASE
+            WHEN TO_CHAR(O1.OCR_DIA, 'DD-MM-YYYY') BETWEEN '01-01-2018' AND '31-12-2018' THEN OCR_FERIDOS_GRAVES
+            ELSE 0
+        END) AS FERIDOSGRAVES_2018,
+    SUM(CASE
+            WHEN TO_CHAR(O1.OCR_DIA, 'DD-MM-YYYY') BETWEEN '01-01-2021' AND '31-12-2021' THEN OCR_FERIDOS_GRAVES
+            ELSE 0
+        END) AS FERIDOSGRAVES_2021,
+    SUM(CASE
+            WHEN TO_CHAR(O1.OCR_DIA, 'DD-MM-YYYY') BETWEEN '01-01-2022' AND '31-12-2022' THEN OCR_FERIDOS_GRAVES
+            ELSE 0
+        END) AS FERIDOSGRAVES_2022,
+    ROUND(((((SUM(CASE
+                    WHEN TO_CHAR(O1.OCR_DIA, 'DD-MM-YYYY') BETWEEN '01-01-2021' AND '31-12-2021' THEN OCR_FERIDOS_LEVES
+                    ELSE 0
+                END)) - (SUM(CASE
+                            WHEN TO_CHAR(O1.OCR_DIA, 'DD-MM-YYYY') BETWEEN '01-01-2018' AND '31-12-2018' THEN OCR_FERIDOS_LEVES
+                            ELSE 0
+                        END))) / (SUM(CASE
+                                    WHEN TO_CHAR(O1.OCR_DIA, 'DD-MM-YYYY') BETWEEN '01-01-2018' AND '31-12-2018' THEN OCR_FERIDOS_LEVES
+                                    ELSE 0
+                                END))) * 100), 2) AS PORCENTAGEM_FERIDOSLEVES_2018_2021,
+    ROUND(((((SUM(CASE
+                    WHEN TO_CHAR(O1.OCR_DIA, 'DD-MM-YYYY') BETWEEN '01-01-2022' AND '31-12-2022' THEN OCR_FERIDOS_LEVES
+                    ELSE 0
+                END)) - (SUM(CASE
+                            WHEN TO_CHAR(O1.OCR_DIA, 'DD-MM-YYYY') BETWEEN '01-01-2021' AND '31-12-2021' THEN OCR_FERIDOS_LEVES
+                            ELSE 0
+                        END))) / (SUM(CASE
+                                    WHEN TO_CHAR(O1.OCR_DIA, 'DD-MM-YYYY') BETWEEN '01-01-2021' AND '31-12-2021' THEN OCR_FERIDOS_LEVES
+                                    ELSE 0
+                                END))) * 100), 2) AS PORCENTAGEM_FERIDOSLEVES_2021_2022,
+    ROUND(((((SUM(CASE
+                    WHEN TO_CHAR(O1.OCR_DIA, 'DD-MM-YYYY') BETWEEN '01-01-2021' AND '31-12-2021' THEN OCR_FERIDOS_GRAVES
+                    ELSE 0
+                END)) - (SUM(CASE
+                            WHEN TO_CHAR(O1.OCR_DIA, 'DD-MM-YYYY') BETWEEN '01-01-2018' AND '31-12-2018' THEN OCR_FERIDOS_GRAVES
+                            ELSE 0
+                        END))) / (SUM(CASE
+                                    WHEN TO_CHAR(O1.OCR_DIA, 'DD-MM-YYYY') BETWEEN '01-01-2018' AND '31-12-2018' THEN OCR_FERIDOS_GRAVES
+                                    ELSE 0
+                                END))) * 100), 2) AS PORCENTAGEM_FERIDOSGRAVES_2018_2021,
+    ROUND(((((SUM(CASE
+                    WHEN TO_CHAR(O1.OCR_DIA, 'DD-MM-YYYY') BETWEEN '01-01-2022' AND '31-12-2022' THEN OCR_FERIDOS_GRAVES
+                    ELSE 0
+                END)) - (SUM(CASE
+                            WHEN TO_CHAR(O1.OCR_DIA, 'DD-MM-YYYY') BETWEEN '01-01-2021' AND '31-12-2021' THEN OCR_FERIDOS_GRAVES
+                            ELSE 0
+                        END))) / (SUM(CASE
+                                    WHEN TO_CHAR(O1.OCR_DIA, 'DD-MM-YYYY') BETWEEN '01-01-2021' AND '31-12-2021' THEN OCR_FERIDOS_GRAVES
+                                    ELSE 0
+                                END))) * 100), 2) AS PORCENTAGEM_FERIDOSGRAVES_2021_2022
+FROM  
+    (SELECT O1.OCR_FERIDOS_LEVES, O1.OCR_FERIDOS_GRAVES, O1.OCR_HORARIO, O1.OCR_DIA
+        FROM OCORRENCIA O1
+    UNION
+    SELECT O2.HOCR_FERIDOS_LEVES, O2.HOCR_FERIDOS_GRAVES, O2.HOCR_HORARIO, O2.HOCR_DIA
+        FROM HOCORRENCIA O2) O1
+GROUP BY
+    CASE
+        WHEN TO_CHAR(O1.OCR_HORARIO, 'HH24:MI:SS') BETWEEN '00:00:00' AND '05:59:59' THEN 'Madrugada'
+        WHEN TO_CHAR(O1.OCR_HORARIO, 'HH24:MI:SS') BETWEEN '06:00:00' AND '11:59:59' THEN 'Manhã'
+        WHEN TO_CHAR(O1.OCR_HORARIO, 'HH24:MI:SS') BETWEEN '12:00:00' AND '17:59:59' THEN 'Tarde'
+        ELSE 'Noite'
+    END
